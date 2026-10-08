@@ -1,287 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta name="robots" content="noindex, nofollow">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>1785 SR 436, Winter Park, FL | Deal Timeline</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1785 SR 436 Deal Timeline</title>
 <style>
-  :root{
-    --ink:#1f2933; --muted:#5f6b7a; --line:#e3e7ec; --bg:#f6f7f9; --card:#ffffff;
-    --accent:#0f6e74; --accent-soft:#e3f1f1; --hard:#1f2933;
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 24px}
-  header{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:24px}
-  .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 6px}
-  h1{font-size:30px;line-height:1.15;margin:0 0 6px;font-weight:700}
-  .sub{color:var(--muted);margin:0}
-  h2{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;font-weight:700}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:20px}
-  .grid{display:grid;gap:14px}
-  .kpis{grid-template-columns:repeat(4,1fr)}
-  .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
-  .kpi .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-  .kpi .val{font-size:22px;font-weight:700;margin-top:4px}
-  .kpi .note{font-size:13px;color:var(--muted);margin-top:2px}
-  .kpi.accent{border-color:var(--accent);background:var(--accent-soft)}
-  .kpi.accent .val{color:var(--accent)}
-  .parties{grid-template-columns:repeat(2,1fr);gap:10px 24px}
-  .party .role{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-  .party .name{font-weight:600}
-  /* control */
-  .control{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
-  .control label{font-weight:600;font-size:14px}
-  .control input[type=date]{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;color:var(--ink);background:#fff}
-  .control input[type=range]{flex:1;min-width:180px;accent-color:var(--accent)}
-  .scenario{display:inline-block;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:13px;padding:4px 10px;border-radius:999px}
-  .hint{font-size:13px;color:var(--muted);margin:10px 0 0}
-  .warn{color:#9a3b12}
-  /* timeline */
-  .tl{list-style:none;margin:0;padding:0;position:relative}
-  .tl:before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:2px;background:var(--line)}
-  .tl li{position:relative;padding:0 0 22px 40px}
-  .tl li:last-child{padding-bottom:0}
-  .dot{position:absolute;left:4px;top:4px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--muted)}
-  .tl li.fixed .dot{border-color:var(--ink)}
-  .tl li.calc .dot{border-color:var(--accent);background:var(--accent-soft)}
-  .tl li.key .dot{background:var(--accent);border-color:var(--accent)}
-  .when{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.02em}
-  .tl li.fixed .when{color:var(--ink)}
-  .what{font-weight:700;font-size:17px;margin:2px 0 4px}
-  .tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:2px}
-  .tag.fixed{background:#eceff3;color:var(--ink)}
-  .tag.calc{background:var(--accent-soft);color:var(--accent)}
-  .desc{margin:0;color:var(--muted);font-size:15px}
-  .desc li{padding:0;margin:0}
-  /* risk chart */
-  .chart{width:100%;height:auto;display:block}
-  .legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--muted);margin-top:10px}
-  .sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
-  .phases{grid-template-columns:repeat(3,1fr);margin-top:16px}
-  .phase{border:1px solid var(--line);border-radius:10px;padding:14px}
-  .phase .amt{font-size:22px;font-weight:700}
-  .phase .ph{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-  .phase .rng{font-size:13px;color:var(--muted)}
-  .phase.mid{border-color:var(--accent);background:var(--accent-soft)}
-  .phase.mid .amt{color:var(--accent)}
-  .phase.hard{background:var(--hard);color:#fff;border-color:var(--hard)}
-  .phase.hard .ph,.phase.hard .rng{color:#c9d1da}
-  ul.plain{margin:0;padding-left:18px}
-  ul.plain li{margin:0 0 6px}
-  footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:8px}
-  @media (max-width:720px){
-    .wrap{padding:22px 14px 18px}
-    h1{font-size:24px}
-    .kpis{grid-template-columns:repeat(2,1fr)}
-    .parties{grid-template-columns:1fr}
-    .phases{grid-template-columns:1fr}
-    .card{padding:18px}
-    .kpi .val{font-size:19px}
-  }
-  @media print{body{background:#fff}.card,.kpi{break-inside:avoid}}
-</style>
-</head>
-<body>
-<div class="wrap">
-
-<header>
-  <p class="eyebrow">Deal Timeline &middot; Letter of Intent</p>
-  <h1>1785 SR 436, Winter Park, FL</h1>
-  <p class="sub">LOI dated October 8, 2026. This page shows the key dates and the deposit at risk.</p>
-</header>
-
-<section class="grid kpis" aria-label="Key terms">
-  <div class="kpi accent"><div class="label">Price</div><div class="val">$4,800,000</div><div class="note">No seller financing.</div></div>
-  <div class="kpi"><div class="label">Prior ask</div><div class="val">$5,006,237</div><div class="note">Included a $500K seller note.</div></div>
-  <div class="kpi"><div class="label">Reduction</div><div class="val">About $206K</div><div class="note">Versus the prior ask.</div></div>
-  <div class="kpi"><div class="label">Total deposits</div><div class="val">$150,000</div><div class="note">$50K + $100K.</div></div>
-</section>
-
-<section class="card" style="margin-top:20px" aria-label="Parties">
-  <h2>Parties</h2>
-  <div class="grid parties">
-    <div class="party"><div class="role">Buyer</div><div class="name">Ciaran Joseph McArdle and/or assigns</div></div>
-    <div class="party"><div class="role">Seller</div><div class="name">PDMF Properties, Inc.</div></div>
-    <div class="party"><div class="role">Buyer's broker</div><div class="name">Ben LaFreniere, CCIM, Quest Company</div></div>
-    <div class="party"><div class="role">Seller's broker</div><div class="name">Michael Waldrop, Waldrop Properties</div></div>
-    <div class="party"><div class="role">Escrow</div><div class="name">Fidelity National Title, Raleigh</div></div>
-  </div>
-</section>
-
-<section class="card" aria-label="Contract date">
-  <h2>Try a contract date</h2>
-  <div class="control">
-    <label for="cdate">Contract signed</label>
-    <input type="date" id="cdate" value="2026-10-28" min="2026-10-08" max="2026-10-28">
-    <input type="range" id="cslide" min="0" max="20" step="1" value="20" aria-label="Days after LOI">
-    <span class="scenario" id="scenario">If contract signed Oct 28</span>
-  </div>
-  <p class="hint" id="hint">The contract must be signed by October 28, 2026. Move the slider or pick a date. All later dates update.</p>
-</section>
-
-<section class="card" aria-label="Timeline">
-  <h2>Timeline</h2>
-  <ol class="tl">
-    <li class="fixed">
-      <span class="dot"></span>
-      <div class="when">Thu, Oct 8, 2026</div>
-      <div class="what">LOI dated <span class="tag fixed">Fixed</span></div>
-      <p class="desc">Price is $4,800,000. Seller financing is removed.</p>
-    </li>
-    <li class="fixed">
-      <span class="dot"></span>
-      <div class="when">Thu, Oct 15, 2026</div>
-      <div class="what">LOI response due <span class="tag fixed">Fixed</span></div>
-      <p class="desc">The buyer answers the LOI by this date.</p>
-    </li>
-    <li class="fixed">
-      <span class="dot"></span>
-      <div class="when">Before contract</div>
-      <div class="what">Lender letter <span class="tag fixed">Required</span></div>
-      <p class="desc">The buyer provides a lender letter before the contract. Ciaran's lender reviewed the property. The lender can finance it.</p>
-    </li>
-    <li class="fixed">
-      <span class="dot"></span>
-      <div class="when">Oct 8 to Oct 28, 2026</div>
-      <div class="what">20-day exclusivity <span class="tag fixed">Fixed</span></div>
-      <p class="desc">The parties sign a contract within 20 days of the LOI. The seller can keep marketing the property during this time.</p>
-    </li>
-    <li class="key calc">
-      <span class="dot"></span>
-      <div class="when" id="d-contract">Wed, Oct 28, 2026</div>
-      <div class="what">Contract signed. $50,000 deposit. <span class="tag calc" data-scn>If contract signed Oct 28</span></div>
-      <p class="desc">The buyer places a $50,000 deposit with escrow. The 45-day examination period starts.</p>
-    </li>
-    <li class="calc">
-      <span class="dot"></span>
-      <div class="when" id="d-exam-range">Oct 28 to Dec 12, 2026</div>
-      <div class="what">Examination period, 45 days <span class="tag calc" data-scn>If contract signed Oct 28</span></div>
-      <p class="desc">The buyer inspects the property. The buyer investigates a possible driveway easement. The $50,000 deposit is refundable during this period.</p>
-    </li>
-    <li class="key calc">
-      <span class="dot"></span>
-      <div class="when" id="d-exam">Sat, Dec 12, 2026</div>
-      <div class="what">Examination ends. $100,000 additional deposit. <span class="tag calc" data-scn>If contract signed Oct 28</span></div>
-      <p class="desc">The buyer adds $100,000. There is no financing contingency. All $150,000 becomes nonrefundable.</p>
-    </li>
-    <li class="key calc">
-      <span class="dot"></span>
-      <div class="when" id="d-close">Tue, Jan 26, 2027</div>
-      <div class="what">Closing <span class="tag calc" data-scn>If contract signed Oct 28</span></div>
-      <p class="desc">Closing occurs 45 days after the examination period ends. Fidelity National Title, Raleigh, handles escrow.</p>
-    </li>
-  </ol>
-</section>
-
-<section class="card" aria-label="Money at risk">
-  <h2>Deposit at risk over time</h2>
-  <svg class="chart" id="chart" viewBox="0 0 900 260" role="img" aria-label="Step chart of deposit at risk"></svg>
-  <div class="legend">
-    <span><span class="sw" style="background:#cfd6de"></span>Nothing at risk</span>
-    <span><span class="sw" style="background:var(--accent)"></span>Refundable</span>
-    <span><span class="sw" style="background:var(--hard)"></span>Nonrefundable (hard)</span>
-  </div>
-  <div class="grid phases">
-    <div class="phase"><div class="ph">Before contract</div><div class="amt">$0</div><div class="rng" id="p1">Oct 8 to Oct 28, 2026</div></div>
-    <div class="phase mid"><div class="ph">During examination</div><div class="amt">$50,000</div><div class="rng" id="p2">Refundable. Oct 28 to Dec 12, 2026.</div></div>
-    <div class="phase hard"><div class="ph">After examination</div><div class="amt">$150,000</div><div class="rng" id="p3">Hard. Dec 12, 2026 to closing on Jan 26, 2027.</div></div>
-  </div>
-</section>
-
-<section class="card" aria-label="Notes">
-  <h2>Points to note</h2>
-  <ul class="plain">
-    <li>The contract has no financing contingency. Confirm the loan before the examination period ends.</li>
-    <li>The seller can keep marketing during exclusivity. A fast contract protects the deal.</li>
-    <li>A driveway easement may exist. The buyer investigates it during the examination period.</li>
-    <li>The dates after the contract are estimates. They assume the contract date shown above.</li>
-  </ul>
-</section>
-
-<footer>Prepared by Ben LaFreniere, CCIM, Quest Company of Central Florida. Dates are illustrative; the LOI and contract govern.</footer>
-</div>
-
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f6f7f9;color:#1f2933;font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.box{background:#fff;border:1px solid #e3e7ec;border-radius:14px;padding:28px 26px;width:min(340px,90vw);text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.05)}
+.eb{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0f6e74;font-weight:700;margin:0 0 6px}
+h1{font-size:20px;margin:0 0 4px} p{color:#5f6b7a;margin:0 0 18px;font-size:14px}
+input{font:inherit;font-size:22px;letter-spacing:.3em;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:1px solid #cfd6de;border-radius:10px;margin-bottom:12px}
+button{font:inherit;font-weight:700;width:100%;padding:11px;border:0;border-radius:10px;background:#0f6e74;color:#fff;cursor:pointer}
+.err{color:#9a3b12;font-size:13px;min-height:18px;margin-top:10px}
+.ft{font-size:12px;color:#8a95a3;margin-top:16px}
+</style></head><body>
+<form class="box" id="f">
+<div class="eb">Private page</div>
+<h1>1785 SR 436 Deal Timeline</h1>
+<p>Enter the access code to view.</p>
+<input id="c" type="password" inputmode="numeric" autocomplete="off" autofocus aria-label="Access code">
+<button type="submit" id="b">Open</button>
+<div class="err" id="e"></div>
+<div class="ft">Ben LaFreniere, CCIM &middot; Quest Company of Central Florida</div>
+</form>
 <script>
-(function(){
-  var LOI = utc(2026,9,8), DEADLINE = utc(2026,9,28), EXAM = 45, CLOSE = 45, DAY = 864e5;
-  var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  var WD = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-  function utc(y,m,d){return new Date(Date.UTC(y,m,d));}
-  function add(d,n){return new Date(d.getTime()+n*DAY);}
-  function iso(d){return d.toISOString().slice(0,10);}
-  function parse(s){var p=s.split("-");return utc(+p[0],+p[1]-1,+p[2]);}
-  function md(d){return MON[d.getUTCMonth()]+" "+d.getUTCDate();}
-  function full(d){return md(d)+", "+d.getUTCFullYear();}
-  function wfull(d){return WD[d.getUTCDay()]+", "+full(d);}
-  function rng(a,b){return a.getUTCFullYear()===b.getUTCFullYear()? md(a)+" to "+full(b) : full(a)+" to "+full(b);}
-  function $(id){return document.getElementById(id);}
-  var di=$("cdate"), sl=$("cslide");
-
-  function render(c){
-    var ex=add(c,EXAM), cl=add(ex,CLOSE), lbl="If contract signed "+md(c);
-    $("scenario").textContent=lbl;
-    [].forEach.call(document.querySelectorAll("[data-scn]"),function(e){e.textContent=lbl;});
-    $("d-contract").textContent=wfull(c);
-    $("d-exam-range").textContent=rng(c,ex);
-    $("d-exam").textContent=wfull(ex);
-    $("d-close").textContent=wfull(cl);
-    $("p1").textContent=rng(LOI,c);
-    $("p2").textContent="Refundable. "+rng(c,ex)+".";
-    $("p3").textContent="Hard. "+full(ex)+" to closing on "+full(cl)+".";
-    var wk=[0,6].indexOf(ex.getUTCDay())>-1||[0,6].indexOf(cl.getUTCDay())>-1;
-    $("hint").innerHTML="The contract must be signed by October 28, 2026. Move the slider or pick a date. All later dates update."+
-      (wk?' <span class="warn">One or more dates falls on a weekend. Check how the contract handles weekend deadlines.</span>':"");
-    chart(c,ex,cl);
-  }
-
-  function chart(c,ex,cl){
-    var sm=$("chart").getBoundingClientRect().width<600, W=sm?460:900,H=sm?280:260,L=sm?52:70,R=sm?14:20,T=24,B=56,pw=W-L-R,ph=H-T-B;
-    var t0=LOI.getTime(), t1=cl.getTime();
-    function x(d){return L+(d.getTime()-t0)/(t1-t0)*pw;}
-    function y(v){return T+ph-(v/150000)*ph;}
-    var s="";
-    [0,50000,100000,150000].forEach(function(v){
-      s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(v)+'" y2="'+y(v)+'" stroke="#e3e7ec"/>';
-      s+='<text x="'+(L-10)+'" y="'+(y(v)+4)+'" text-anchor="end" font-size="12" fill="#5f6b7a">$'+(v/1000)+'K</text>';
-    });
-    var h0=6;
-    s+='<rect x="'+x(LOI)+'" y="'+(y(0)-h0)+'" width="'+(x(c)-x(LOI))+'" height="'+h0+'" fill="#cfd6de" rx="2"/>';
-    s+='<rect x="'+x(c)+'" y="'+y(50000)+'" width="'+(x(ex)-x(c))+'" height="'+(y(0)-y(50000))+'" fill="#0f6e74" rx="3"/>';
-    s+='<rect x="'+x(ex)+'" y="'+y(150000)+'" width="'+(x(cl)-x(ex))+'" height="'+(y(0)-y(150000))+'" fill="#1f2933" rx="3"/>';
-    function lab(d,v,txt,col){s+='<text x="'+((d[0]+d[1])/2)+'" y="'+(y(v)-8)+'" text-anchor="middle" font-size="13" font-weight="700" fill="'+col+'">'+txt+'</text>';}
-    if(x(c)-x(LOI)>30)lab([x(LOI),x(c)],0,"$0","#5f6b7a");
-    lab([x(c),x(ex)],50000,"$50K refundable","#0f6e74");
-    lab([x(ex),x(cl)],150000,"$150K hard","#1f2933");
-    var marks=[[LOI,"LOI"],[c,"Contract"],[ex,"Exam ends"],[cl,"Closing"]];
-    if(x(c)-x(LOI)<(sm?70:90))marks.shift();
-    marks.forEach(function(m,i){
-      var xx=x(m[0]), anc=i===0?"start":(i===marks.length-1?"end":"middle");
-      s+='<line x1="'+xx+'" x2="'+xx+'" y1="'+y(0)+'" y2="'+(y(0)+6)+'" stroke="#5f6b7a"/>';
-      s+='<text x="'+xx+'" y="'+(y(0)+22)+'" text-anchor="'+anc+'" font-size="12" font-weight="700" fill="#1f2933">'+m[1]+'</text>';
-      s+='<text x="'+xx+'" y="'+(y(0)+38)+'" text-anchor="'+anc+'" font-size="12" fill="#5f6b7a">'+md(m[0])+'</text>';
-    });
-    s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(0)+'" y2="'+y(0)+'" stroke="#5f6b7a"/>';
-    $("chart").setAttribute("viewBox","0 0 "+W+" "+H);
-    $("chart").innerHTML=s;
-  }
-
-  function fromSlider(){var c=add(LOI,+sl.value);di.value=iso(c);render(c);}
-  function fromDate(){
-    if(!di.value)return;
-    var c=parse(di.value);
-    if(c<LOI)c=LOI; if(c>DEADLINE)c=DEADLINE;
-    di.value=iso(c); sl.value=Math.round((c-LOI)/DAY); render(c);
-  }
-  sl.addEventListener("input",fromSlider);
-  window.addEventListener("resize",function(){render(add(LOI,+sl.value));});
-  di.addEventListener("change",fromDate);
-  di.addEventListener("input",fromDate);
-  var q=/[?&]contract=(\d{4}-\d{2}-\d{2})/.exec(location.search);
-  if(q){di.value=q[1];fromDate();}else{render(DEADLINE);}
-})();
-</script>
-</body>
-</html>
+var P={s:"vfrZRLp0l7BJB5w4E70izw==",i:"wsbcEamarVsCxJ2l",n:600000,c:`
+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
+`};
+function u(s){return Uint8Array.from(atob(s.replace(/\s/g,"")),function(c){return c.charCodeAt(0)})}
+async function open_(code){
+  var km=await crypto.subtle.importKey("raw",new TextEncoder().encode(code),"PBKDF2",false,["deriveKey"]);
+  var k=await crypto.subtle.deriveKey({name:"PBKDF2",salt:u(P.s),iterations:P.n,hash:"SHA-256"},km,{name:"AES-GCM",length:256},false,["decrypt"]);
+  var pt=await crypto.subtle.decrypt({name:"AES-GCM",iv:u(P.i)},k,u(P.c));
+  return await new Response(new Blob([pt]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+}
+document.getElementById("f").addEventListener("submit",async function(ev){
+  ev.preventDefault();var b=document.getElementById("b"),e=document.getElementById("e");
+  b.disabled=true;b.textContent="Opening...";e.textContent="";
+  try{var h=await open_(document.getElementById("c").value.trim());document.open();document.write(h);document.close();}
+  catch(x){e.textContent="That code didn't work. Try again.";b.disabled=false;b.textContent="Open";}
+});
+</script></body></html>
