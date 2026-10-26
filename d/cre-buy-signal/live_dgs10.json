@@ -1,0 +1,9 @@
+{
+  "series": "DGS10",
+  "source": "https://fred.stlouisfed.org/series/DGS10",
+  "csv": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10",
+  "as_of": "2026-10-22",
+  "dgs10_pct": 4.96,
+  "refreshed_at": "2026-10-26T08:53:39-04:00",
+  "note": "Sibling file for GitHub Pages / cron. Browser CORS usually blocks direct FRED fetch."
+}
